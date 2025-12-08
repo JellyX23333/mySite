@@ -7,10 +7,21 @@ body {
     color: #405664;
     padding: 30px;
 } 
-h1{
+h1, h2, h3, h4, h5, h6 {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 24px;
     line-height: 1.7;
     color: #05456a;
+}
+/* style for "block" 
+they are used to divide sections
+they can be expanded upon clicks
+*/
+.block {
+    margin-bottom: 30px;
+}
+.block:hover {
+    background-color: #fff;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
 }
