@@ -25,3 +25,7 @@ they can be expanded upon clicks
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
     transition: all 0.3s ease-in-out;
 }
+
+.hidden {
+    display: none;
+    }
