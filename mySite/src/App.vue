@@ -1,38 +1,26 @@
 <script setup lang="ts">
-function changeLanguage() {
-  var lang = document.documentElement.lang;
-  if (lang === "en") {
-    document.documentElement.lang = "zh";
-  } else {
-    document.documentElement.lang = "en";
-  }
+function toggleLanguage() {
+  const currentLang = document.documentElement.lang;
+  const newLang = currentLang === 'en' ? 'zh' : 'en';
+  document.documentElement.lang = newLang;
 }
 </script>
 
 
 <template>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Me</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="hiddenProject.js"></script>
-    <link rel="icon" href="favicon.ico">
-  </head>
-  <body>
+  <div>
     <div style="float:right;width:25%;text-align:right;margin-bottom:30px;">
       <h1>Zeping</h1>
       <h2 style="color:#44617d;">Xu</h2>
     </div>
-    <button onclick="changeLanguage()"><img src="https://cdn3.iconfinder.com/data/icons/design-tools-15/24/_translation-1024.png" width="30" height="30" alt="translate"></button>
+    <button @click="changeLanguage"><img src="https://cdn3.iconfinder.com/data/icons/design-tools-15/24/_translation-1024.png" width="30" height="30" alt="translate"></button>
     <div class="block">
       <h2>Projects</h2>
       <div>
         <h3>Ongoing</h3>
         <ul style="list-style-type:none">
           <li><span>personal website</span></li>
-          <li><button id="showHidden">show more</button></li>
+          <li><button @click="showHidden">show more</button></li>
         </ul>
       </div>
       <div id="content1" class="hidden">Content 1</div>
@@ -83,6 +71,8 @@ function changeLanguage() {
     <p>
       <a href="https://github.com/jellyx23333"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="30" height="30" alt="github icon"></a>
       <a href="mailto:izeping@outlook.com"><img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png" width="30" height="30" alt="email icon"></a>
+    </p>
+  </div>
 </template>
 
 <style scoped>
