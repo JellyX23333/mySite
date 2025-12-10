@@ -17,6 +17,14 @@ h1, h2, h3, h4, h5, h6 {
 they are used to divide sections
 they can be expanded upon clicks
 */
+
+/* auto-apply when user has dark mode enabled */
+@media (prefers-color-scheme: dark) {
+    html {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
+
 .block {
     margin-bottom: 30px;
 }
