@@ -27,7 +27,18 @@
         <!- link to my github; email;blog;>
         <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;">
             <li style="display:inline-block;margin-right:10px;"><a href="https://github.com/jellyx23333"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="30" height="30" alt="github icon"></a></li>
-            <li style="display:inline-block;margin-right:10px;"><a href="mailto:izeping@outlook.com"><img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png" width="30" height="30" alt="email icon"></a></li>
+            <!- there is no @ but # for security sake>
+            <li style="display:inline-block;margin-right:10px;"><a href="mailto:izeping#outlook.com">
+                <img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png" width="30" height="30" alt="email icon">
+                <span class="tooltip" style="visibility:hidden;opacity:0;transition:opacity 0.5s ease-in-out;position:absolute;left:0;top:100%;background-color:black;color:white;padding:5px;border-radius:5px;">izeping#outlook.com</span>
+            </a></li>
+            <style>
+                .tooltip:hover {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            </style>
+⌈            
         </ul>
 
         <div style="clear:both;"></div>

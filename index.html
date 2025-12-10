@@ -8,31 +8,37 @@
         <title>WHO</title>
 
         <link rel="stylesheet" href="style.css">
-        <script src="hiddenProject.js"></script>
         <link rel="icon" href="favicon.ico">
         
     </head>
     <body>
-        <div style="float:right;width:25%;text-align:right;margin-bottom:30px;">
-            <h1>Zeping</h1>
-            <h2 style="color:#44617d;">Xu</h2>
-        </div>
-        <button onclick="changeLanguage()"><img src="https://cdn3.iconfinder.com/data/icons/design-tools-15/24/_translation-1024.png" width="30" height="30" alt="translate"></button>
-        <script>
-            function changeLanguage(){
-                var lang = document.documentElement.getAttribute("lang");
-                if (lang === "en"){
-                    window.location.href = "index.html";
-                } else {
-                    window.location.href = "index.zh.html";
+        <h1 style="float:right;margin-right:10px;">about me</h1>
+
+        <div style="float:left;display:inline-block;">
+            <button onclick="changeLanguage()" style="background-color: transparent; border: none; outline: none;"><img src="https://cdn3.iconfinder.com/data/icons/design-tools-15/24/_translation-1024.png" width="30" height="30" alt="translate"></button>
+            <script>
+                function changeLanguage(){
+                    var lang = document.documentElement.getAttribute("lang");
+                    if (lang === "en"){
+                        window.location.href = "index.html";
+                    } else {
+                        window.location.href = "index.zh.html";
+                    }
                 }
-            }
-        </script>
-        <!- link to my github; email;blog;>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;">
-            <li style="display:inline-block;margin-right:10px;"><a href="https://github.com/jellyx23333"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="30" height="30" alt="github icon"></a></li>
-            <li style="display:inline-block;margin-right:10px;"><a href="mailto:izeping@outlook.com"><img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png" width="30" height="30" alt="email icon"></a></li>
-        </ul>
+            </script>
+            <!- link to my github; email;blog;>
+            <ul style="list-style:none;padding:0;margin:0;display:inline-block;">
+                <li style="display:inline-block;margin-right:10px;"><a href="https://github.com/jellyx23333"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="30" height="30" alt="github icon"></a></li>
+                <!- there is no @ but # for security sake>
+                <li style="display:inline-block;margin-right:10px;">
+                    <a class="tooltip-wrapper" style="position:relative;">
+                        <img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png"
+                             width="30" height="30" alt="email icon">
+                        <span class="tooltip">izeping#outlook.com</span>
+                    </a>
+                </li>
+             </ul>
+        </div>
 
         <div style="clear:both;"></div>
         <!- a breif introduction of my self>   
@@ -56,13 +62,15 @@
         <div class="block">
             <h2>Projects</h2>
             <div>
-                <h3>Ongoing</h3>
-                <ul style="list-style-type:none">
-                    <li><span>personal website</span></li>
-                    <li><button id="showHidden">show more</button></li>
-                </ul>
-            </div>
-            <div id="content1" class="hidden">Content 1</div>
+            <h3>Ongoing</h3>
+            <ul id="projectList" style="list-style-type:none">
+                <li><span>personal website</span></li>
+                <li><button id="showHidden" style="background-color: transparent; outline: none;">show more</button></li>
+            </ul>
+            </div> 
+            <script src="hiddenProject.js"></script>
+
+
 
             <h3>completed</h3>
             <ul style="list-style-type:none">
@@ -96,6 +104,9 @@
                 <li>Hiking</li>
                 <li>Climbing</li>
                 <li>Diving</li>
+                <li>Photography</li>
+                <li>Pottery</li>
+                <li>...</li>
             </ul>
         </div>
         
