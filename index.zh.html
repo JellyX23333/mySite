@@ -1,118 +1,145 @@
-<!DOCTYPE   html>
-<!- this is the chinese version of index.html>
-<html>
+<!DOCTYPE html>
+<html lang="zh">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <title>Me</title>
-        <link rel="stylesheet" href="style.css">        
-        <script src="hiddenProject.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>关于我</title>
+
+        <link rel="stylesheet" href="style.css">
         <link rel="icon" href="favicon.ico">
+
+       
     </head>
     <body>
-        <div style="float:right;width:25%;text-align:right;margin-bottom:30px;">
-            <h1>关于我</h1>
-        </div>
-        <button onclick="changeLanguage()"><img src="https://cdn3.iconfinder.com/data/icons/design-tools-15/24/_translation-1024.png" width="30" height="30" alt="translate"></button>
-        <script>
+        <h1 style="float:right;margin-right:10px;">关于我</h1>
+
+        <div style="float:left;display:inline-block;">
+            <button onclick="changeLanguage()" style="background-color: transparent; border: none; outline: none;">
+                <img src="https://cdn3.iconfinder.com/data/icons/design-tools-15/24/_translation-1024.png" width="30" height="30" alt="translate">
+            </button>
+            <script>
             function changeLanguage() {
-                var lang = document.documentElement.getAttribute("lang");
-                if (lang === "en"){
-                    window.location.href = "index.zh.html";
-                } else {
+                const html = document.documentElement;
+                const current = window.location.pathname;
+
+                if (current.includes("index.zh.html")) {
+                    html.setAttribute("lang", "en");
                     window.location.href = "index.html";
+                } else {
+                    html.setAttribute("lang", "zh");
+                    window.location.href = "index.zh.html";
                 }
             }
-        </script>
-        <!- link to my github; email;blog;>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;">
-            <li style="display:inline-block;margin-right:10px;"><a href="https://github.com/jellyx23333"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="30" height="30" alt="github icon"></a></li>
-            <!- there is no @ but # for security sake>
-            <li style="display:inline-block;margin-right:10px;"><a href="mailto:izeping#outlook.com">
-                <img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png" width="30" height="30" alt="email icon">
-                <span class="tooltip" style="visibility:hidden;opacity:0;transition:opacity 0.5s ease-in-out;position:absolute;left:0;top:100%;background-color:black;color:white;padding:5px;border-radius:5px;">izeping#outlook.com</span>
-            </a></li>
-            <style>
-                .tooltip:hover {
-                    visibility: visible;
-                    opacity: 1;
-                }
-            </style>
-⌈            
-        </ul>
+            </script>
+
+            <ul style="list-style:none;padding:0;margin:0;display:inline-block;">
+                <li style="display:inline-block;margin-right:10px;">
+                    <a href="https://github.com/jellyx23333">
+                        <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="30" height="30" alt="github icon">
+                    </a>
+                </li>
+
+                <li style="display:inline-block;margin-right:10px;">
+                    <a class="tooltip-wrapper" style="position:relative;">
+                        <img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png"
+                             width="30" height="30" alt="email icon">
+                        <span class="tooltip">izeping#outlook.com</span>
+                    </a>
+                </li>
+
+                <li style="display:inline-block;margin-right:10px;">
+                    <a href="https://www.linkedin.com/in/zeping-xu-052b13356/">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6KyW5WYCdoJ32KzNbJH6NMm43byKYpZuo7g&s"
+                             width="30" height="30" alt="linkedin icon">
+                    </a>
+                </li>
+             </ul>
+        </div>
 
         <div style="clear:both;"></div>
-        <!- a breif introduction of my self>   
+
         <div class="block">
-            <h2>Skills</h2>
+            <h2>技能</h2>
             <ul>
-                <li>Molecular Biology</li>
-                <li>Cell Biology</li>
-                <li>Chemistry</li>
-                <li>Statistical Analysis</li>
-                <li>Python, Lua, Julia, R & MATLAB</li>
+                <li>分子生物学</li>
+                <li>细胞生物学</li>
+                <li>统计分析</li>
+                <li>Python、Lua、Julia、R 与 MATLAB</li>
                 <li>Arduino</li>
-                <li>Linux system</li>
-                <li>Barista</li>
-                <li>Japanese (N2)</li>
-                <li>Mandarin Chinese (native)</li>
-                <li>Wu Chinese (native)</li>
+                <li>Linux 系统</li>
+                <li>咖啡师</li>
+                <li>日语（N2）</li>
+                <li>英语（近母语）</li>
             </ul>
         </div>
 
         <div class="block">
-            <h2>Projects</h2>
-            <div>
-                <h3>Ongoing</h3>
-                <ul style="list-style-type:none">
-                    <li><span>personal website</span></li>
-                    <li><button id="showHidden">show more</button></li>
-                </ul>
-            </div>
-            <div id="content1" class="hidden">Content 1</div>
-
-            <h3>completed</h3>
+            <h2>项目</h2>
+            
+            <h3>进行中</h3>
             <ul style="list-style-type:none">
-                
+                <li><span>店铺库存管理系统</span></li>
             </ul>
+
+            <h3>已完成</h3>
+            <ul id="projectList" style="list-style-type:none">
+                <li><span>个人网站 </span><span class="censored">这个</span></li>
+                <li>
+                    <button id="toggleBtn" style="background-color: transparent; outline: none; border: none; font-family: 'Lato', sans-serif; font-weight: 400; font-size: 17px; line-height: 2; color: #5a788a;">
+                        更多 ...
+                    </button>
+                </li>
+            </ul>
+            <script src="hiddenProject.js"></script>
         </div>
 
         <hr>
+
         <div class="block">
-            <h2>Education</h2>
+            <h2>教育背景</h2>
             <ul>
-                <li>Bachelor of Sci, University of Melbourne, Currently Enrolled</li>
-                <li>Higher School Certificate, Epping Boys High School, Graduated 2023</li>
+                <li>墨尔本大学 理学学士，在读</li>
+                <li>新南威尔士州高中毕业证书（HSC），Epping Boys High School，2023 年毕业</li>
             </ul>
         </div>
         
         <hr>
+
         <div class="block">
-            <h2>Career history</h2>
+            <h2>职业经历</h2>
             <ul>
-                <li>Assistant Restaurant Manager at Young Barons Woy Woy, Dec.2022 - Dec.2023 <a href="https://www.youngbarons.com/"><img src="https://cdn0.iconfinder.com/data/icons/pixon-1/24/Link_hyperlink-1024.png" width="20" height="20" alt="hyperlink icon"></a></li>
-                <li>Kitchenhand at Burwood Night Market Takoyaki, Jan.2020 – Mar. 2020</li>
-                <li>Cleaner at Queen bakery in Chatswood, Jun.2019 – Dec. 2019</li>
+                <li>
+                    Young Barons Woy Woy 副餐厅经理，2022年12月 – 2023年12月
+                    <a href="https://www.youngbarons.com/"><img src="https://cdn0.iconfinder.com/data/icons/pixon-1/24/Link_hyperlink-1024.png" width="20" height="20" alt="hyperlink icon"></a>
+                </li>
+                <li>Burwood夜市 章鱼烧 厨房助手，2020年1月 – 2020年3月</li>
+                <li>Chatswood Queen Bakery 清洁员，2019年6月 – 2019年12月</li>
             </ul>
         </div>
         
         <hr>
+
         <div class="block">
-            <h2>Interests</h2>
+            <h2>兴趣</h2>
             <ul>
-                <li>Hiking</li>
-                <li>Climbing</li>
-                <li>Diving</li>
+                <li>徒步</li>
+                <li>攀岩</li>
+                <li>潜水</li>
+                <li>摄影</li>
+                <li>陶艺</li>
             </ul>
         </div>
         
         <hr>
+
         <div class="block">
-            <h2>Achievements & Community Engagement</h2>
+            <h2>成就与社区参与</h2>
             <ul>
-                <li>Duke of Edinburg (Gold)</li>
-                <li>Bush Regeneration Volunteer, Jan.2022-Feb.2024</li>
+                <li>爱丁堡公爵奖（金奖）</li>
+                <li>lane cove NP，植被恢复志愿者，2022年1月 – 2024年2月</li>
             </ul>
         </div>
+        <script src="setup.js" defer></script>
     </body>
 </html>
