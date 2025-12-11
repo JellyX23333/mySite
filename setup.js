@@ -66,3 +66,29 @@ function typeText(element, text, speed = 40, callback = () => {}) {
         overlay.remove();
     };
 })();
+
+const toggle = document.getElementById('darkModeToggle');
+
+toggle.addEventListener('change', () => {
+  if(toggle.checked){
+    document.documentElement.classList.add('dark-mode');
+  } else {
+    document.documentElement.classList.remove('dark-mode');
+  }
+});
+
+// Load saved preference
+if(localStorage.getItem('darkMode') === 'enabled'){
+  toggle.checked = true;
+  document.documentElement.classList.add('dark-mode');
+}
+
+toggle.addEventListener('change', () => {
+  if(toggle.checked){
+    document.documentElement.classList.add('dark-mode');
+    localStorage.setItem('darkMode','enabled');
+  } else {
+    document.documentElement.classList.remove('dark-mode');
+    localStorage.setItem('darkMode','disabled');
+  }
+});
