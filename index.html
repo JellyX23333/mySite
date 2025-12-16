@@ -1,144 +1,187 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>about me</title>
 
-        <title>about me</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
 
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="favicon.ico">
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
 
-        
-        
-    </head>
-    <body>
-        <div id="app">
-        <h1 style="float:right;margin-right:10px;">about me</h1>
+<body>
+<div id="app">
 
-        <div style="float:left;display:inline-block;">
-            
-            <!- link to my github; email;blog;linkedin>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; align-items:center; gap:10px;">
-                <li>
-                <button @click="changeLanguage()" style="background-color: transparent; border: none; outline: none;"><img src="https://cdn3.iconfinder.com/data/icons/design-tools-15/24/_translation-1024.png" width="30" height="30" alt="translate"></button>
-                <script>
-                function changeLanguage(){
-                    var lang = document.documentElement.getAttribute("lang");
-                    if (lang === "en"){
-                        window.location.href = "index.html";
-                    } else {
-                        window.location.href = "index.zh.html";
-                    }
-                }
-                </script>
-                </li>
-                <li>
-                  <a href="https://github.com/jellyx23333">
-                    <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="30" height="30" alt="github icon">
-                  </a>
-                </li>
-              
-                <li>
-                  <a class="tooltip-wrapper" style="position:relative;">
-                    <img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png" width="30" height="30" alt="email icon">
-                    <span class="tooltip">izeping#outlook.com</span>
-                  </a>
-                </li>
-              
-                <li>
-                  <a href="https://www.linkedin.com/in/zeping-xu-052b13356/">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6KyW5WYCdoJ32KzNbJH6NMm43byKYpZuo7g&s" width="30" height="30" alt="linkedin icon">
-                  </a>
-                </li>
-              
-                <li>
-                  <label class="switch">
-                    <input type="checkbox" v-model="darkModeToggle">
-                    <span class="slider round"></span>
-                  </label>
-                </li>
-              </ul>
-              
-        </div>
+  <h1 style="float:right;margin-right:10px;">about me</h1>
 
-        <div style="clear:both;"></div>
-        <!- a breif introduction of my self>   
-        <div class="block">
-            <h2>Skills</h2>
-            <ul>
-                <li>Molecular Biology</li>
-                <li>Cell Biology</li>
-                <li>Statistical Analysis</li>
-                <li>Python, Lua, Julia, R & MATLAB</li>
-                <li>Arduino</li>
-                <li>Linux system</li>
-                <li>Barista</li>
-                <li>Japanese (N2)</li>
-                <li>Mandarin Chinese (native)</li>
-                <li>Wu Chinese (native)</li>
-            </ul>
-        </div>
+  <!-- Top icons -->
+  <ul style="list-style:none; padding:0; margin:0; display:flex; align-items:center; gap:10px;">
+    <li>
+      <button @click="changeLanguage" style="background:transparent;border:none;">
+        <img src="https://cdn3.iconfinder.com/data/icons/design-tools-15/24/_translation-1024.png"
+             width="30">
+      </button>
+    </li>
 
-        <div class="block">
-            <h2>Projects</h2>
-            
-            <h3>Ongoing</h3>
-                <ul style="list-style-type:none">
-                    <li><span>Shop Stoke Management System</span></li>
-                </ul> 
-            <h3>completed</h3>
-            
-                <ul id="projectList" style="list-style-type:none">
-                    <li><span>personal website </span><span class="censored">this</span></li>
-                    <li><button @click="showMore = !showMore" style="background-color: transparent; outline: none; border: none; font-family: 'Lato', sans-serif; font-weight: 400; font-size: 17px; line-height: 2; color: #5a788a;">more ...</button></li>
-                </ul>
-                <script src="hiddenProject.js"></script>
-            
-        </div>
+    <li>
+      <a href="https://github.com/jellyx23333">
+        <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+             width="30">
+      </a>
+    </li>
 
-        <hr>
-        <div class="block">
-            <h2>Education</h2>
-            <ul>
-                <li>Bachelor of Sci, University of Melbourne, Currently Enrolled</li>
-                <li>Higher School Certificate, Epping Boys High School, Graduated 2023</li>
-            </ul>
-        </div>
-        
-        <hr>
-        <div class="block">
-            <h2>Career history</h2>
-            <ul>
-                <li>Assistant Restaurant Manager at Young Barons Woy Woy, Dec.2022 - Dec.2023 <a href="https://www.youngbarons.com/"><img src="https://cdn0.iconfinder.com/data/icons/pixon-1/24/Link_hyperlink-1024.png" width="20" height="20" alt="hyperlink icon"></a></li>
-                <li>Kitchenhand at Burwood Night Market Takoyaki, Jan.2020 – Mar. 2020</li>
-                <li>Cleaner at Queen bakery in Chatswood, Jun.2019 – Dec. 2019</li>
-            </ul>
-        </div>
-        
-        <hr>
-        <div class="block">
-            <h2>Interests</h2>
-            <ul>
-                <li>Hiking</li>
-                <li>Climbing</li>
-                <li>Diving</li>
-                <li>Photography</li>
-                <li>Pottery</li>
-            </ul>
-        </div>
-        
-        <hr>
-        <div class="block">
-            <h2>Achievements & Community Engagement</h2>
-            <ul>
-                <li>Duke of Edinburg (Gold)</li>
-                <li>Bush Regeneration Volunteer, Jan.2022-Feb.2024</li>
-            </ul>
-        </div>
-        <script src="setup.js" ></script>
-    </div>
-    </body>
+    <li>
+      <a class="tooltip-wrapper" style="position:relative;">
+        <img src="https://cdn2.iconfinder.com/data/icons/email-line-2/48/email_link_mail-512.png"
+             width="30">
+        <span class="tooltip">izeping#outlook.com</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/zeping-xu-052b13356/">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6KyW5WYCdoJ32KzNbJH6NMm43byKYpZuo7g&s"
+             width="30">
+      </a>
+    </li>
+
+    <li>
+      <label class="switch">
+        <input type="checkbox" v-model="darkMode" @change="toggleDarkMode">
+        <span class="slider round"></span>
+      </label>
+    </li>
+  </ul>
+
+  <div style="clear:both;"></div>
+
+  <!-- Skills -->
+  <div class="block">
+    <h2>Skills</h2>
+    <ul>
+      <li>Molecular Biology</li>
+      <li>Cell Biology</li>
+      <li>Statistical Analysis</li>
+      <li>Python, Lua, Julia, R & MATLAB</li>
+      <li>Arduino</li>
+      <li>Linux system</li>
+      <li>Barista</li>
+      <li>Japanese (N2)</li>
+      <li>Mandarin Chinese (native)</li>
+      <li>Wu Chinese (native)</li>
+    </ul>
+  </div>
+
+  <!-- Projects -->
+  <div class="block">
+    <h2>Projects</h2>
+
+    <h3>Completed</h3>
+    <ul style="list-style:none">
+
+      <li>
+        <span>personal website </span>
+        <span class="censored">this</span>
+      </li>
+
+      <!-- Typed projects -->
+      <li v-for="(p, i) in projects" v-if="showMore" :key="i">
+        <span class="typing">{{ p.typed }}</span>
+
+        <a v-if="p.typed === p.text" :href="p.link" target="_blank">
+          <img src="https://cdn0.iconfinder.com/data/icons/pixon-1/24/Link_hyperlink-1024.png"
+               width="18" style="margin-left:6px;">
+        </a>
+      </li>
+
+      <li>
+        <button @click="toggleProjects"
+                style="background:transparent;border:none;font-size:17px;color:#5a788a;cursor:pointer">
+          {{ showMore ? "hide" : "more ..." }}
+        </button>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+<!-- Vue logic -->
+<script>
+const { createApp, ref, onMounted } = Vue
+
+createApp({
+  setup() {
+    const showMore = ref(false)
+    const darkMode = ref(localStorage.getItem("darkMode") === "enabled")
+
+    const projects = ref([
+      {
+        text: "bilibili video",
+        link: "https://github.com/JellyX23333/BilibiliVideoChanger",
+        typed: ""
+      },
+      {
+        text: "japanese practice",
+        link: "https://github.com/JellyX23333/HiraganaKanji-Practice",
+        typed: ""
+      }
+    ])
+
+    function typeProject(index, speed = 40) {
+      const p = projects.value[index]
+      p.typed = ""
+      let i = 0
+
+      const timer = setInterval(() => {
+        p.typed += p.text[i]
+        i++
+        if (i >= p.text.length) clearInterval(timer)
+      }, speed)
+    }
+
+    function toggleProjects() {
+      showMore.value = !showMore.value
+
+      if (showMore.value) {
+        projects.value.forEach(p => p.typed = "")
+        typeProject(0)
+        setTimeout(() => typeProject(1), 400)
+      }
+    }
+
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle("dark-mode", darkMode.value)
+      localStorage.setItem("darkMode", darkMode.value ? "enabled" : "disabled")
+    }
+
+    function changeLanguage() {
+      const lang = document.documentElement.lang
+      window.location.href = lang === "en" ? "index.zh.html" : "index.html"
+    }
+
+    onMounted(() => {
+      if (darkMode.value) {
+        document.documentElement.classList.add("dark-mode")
+      }
+    })
+
+    return {
+      showMore,
+      projects,
+      darkMode,
+      toggleProjects,
+      toggleDarkMode,
+      changeLanguage
+    }
+  }
+}).mount("#app")
+</script>
+
+</body>
 </html>
+
