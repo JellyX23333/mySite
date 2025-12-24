@@ -316,7 +316,7 @@ createApp({
     });
 
     function toggleComments() {
-      showMore.value = !showMore.value;
+      showMoreComments.value = !showMoreComments.value;
     };
 
     return {
@@ -333,6 +333,7 @@ createApp({
       changeLanguage,
       addComment,
       comments,
+      showMoreComments,
       fetchComments,
       toggleComments,
     }
