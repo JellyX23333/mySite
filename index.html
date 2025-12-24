@@ -166,8 +166,7 @@
         <p><strong>{{ comment.name }}:</strong> {{ comment.comment }}</p>
       </div>
 
-      <button v-if="comments.length > 5" @click="toggleComments"
-        style="background:transparent;border:none;font-size:17px;color:#5a788a;cursor:pointer">
+      <button v-if="comments.length > 5" @click="toggleComments" style="background:transparent;border:none;font-size:17px;color:#5a788a;cursor:pointer">
         {{ showMoreComments ? "hide" : "more ..." }}
       </button>
     </div>
@@ -241,6 +240,8 @@ createApp({
 
   const invalidEmail = ref(false);
   const emptyComment = ref(false);
+
+  const showMoreComments = ref(false); // show more comment or not
 
   // 1. Create reactive data 后面来用
   const comments = ref([]);
@@ -316,7 +317,6 @@ createApp({
 
     function toggleComments() {
       showMore.value = !showMore.value;
-      
     };
 
     return {
