@@ -151,7 +151,7 @@
       <div class="newComment">
         <input type="text" placeholder="Name" v-model="name" style="display:block;margin-bottom:10px;">
         <input type="email" placeholder="Email" v-model="email" style="display:block;margin-bottom:10px;">
-        <textarea placeholder="Comment" v-model="comment" style="display:block;width:100%;height:4em;margin-bottom:10px;"></textarea>
+        <textarea placeholder="Comment" v-model="commentText" style="display:block;width:100%;height:4em;margin-bottom:10px;"></textarea>
         <button @click="addComment">Submit</button>
       </div>
       <div class="comment" v-for="comment in comments">
@@ -220,12 +220,21 @@ createApp({
       }
     })
 
+    // set reactive state for comment components
+    // 1. Declare the reactive variables here
+  const name = ref("");
+  const email = ref("");
+  const commentText = ref(""); // Renamed to avoid conflict
+
+  // 1. Create reactive data 后面来用
+  const comments = ref([]);
+
     // push comments
     function addComment() {
       const comment = {
         name: name.value,
         email: email.value,
-        comment: comment.value
+        comment: commentText.value
       }
 
       const url = "/comment"
@@ -238,12 +247,11 @@ createApp({
 
       name.value = ""
       email.value = ""
-      comment.value = ""
+      commentText.value = "" 
     }
 
     // fetch comment on mount
-    // 1. Create reactive data
-    const comments = ref([]);
+
 
     // 2. Define the fetch function
     const fetchComments = async () => {
