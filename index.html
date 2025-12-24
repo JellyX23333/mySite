@@ -162,7 +162,7 @@
         <button @click="addComment" type='button' style="background:transparent;border:1px solid #5a788a;border-radius:5px;">Submit</button>
       </div>
 
-      <div class="comment" v-for="(comment, i) in comments.slice(0, 5)">
+      <div class="comment" v-for="(comment, i) in showMoreComments ? comments : comments.slice(0, 5)">
         <p><strong>{{ comment.name }}:</strong> {{ comment.comment }}</p>
       </div>
 
@@ -314,6 +314,11 @@ createApp({
       fetchComments();
     });
 
+    function toggleComments() {
+      showMore.value = !showMore.value;
+      
+    };
+
     return {
       name,
       email,
@@ -328,7 +333,8 @@ createApp({
       changeLanguage,
       addComment,
       comments,
-      fetchComments
+      fetchComments,
+      toggleComments,
     }
   }
 }).mount("#app")
