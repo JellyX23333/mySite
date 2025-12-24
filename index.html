@@ -255,7 +255,7 @@ createApp({
     .then(response => {
       if (!response.ok) throw new Error("Server error");
       // Success: Add to list and clear inputs
-      comments.value.push(newComment); 
+      comments.value.push(comment); 
       name.value = "";
       email.value = "";
       commentText.value = "";
