@@ -242,12 +242,12 @@ createApp({
       xhr.open("POST", url)
       xhr.setRequestHeader('Content-Type', 'application/json')
       xhr.send(JSON.stringify(comment))
-      
-      comments.value.push(comment)
 
       name.value = ""
       email.value = ""
       commentText.value = "" 
+
+      window.location.reload()
     }
 
     // fetch comment on mount
@@ -277,6 +277,9 @@ createApp({
     });
 
     return {
+      name,
+      email,
+      commentText,
       showMore,
       projects,
       darkMode,
